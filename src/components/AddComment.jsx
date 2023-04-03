@@ -6,7 +6,7 @@ class AddComment extends Component {
     comment: {
       comment: "",
       rate: "1",
-      elementId: ""
+      elementId: this.props.elementId
     }
   };
 
@@ -16,7 +16,7 @@ class AddComment extends Component {
     try {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${this.props.asin}`, {
         method: "POST",
-        body: JSON.stringify(this.state.reservation),
+        body: JSON.stringify(this.state.comment),
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzOWZmOWM1NmIzNjAwMTMzZmU1NWEiLCJpYXQiOjE2ODA1MDIyMDEsImV4cCI6MTY4MTcxMTgwMX0.fig-8rFCTFRY2yqHXAH6TirDOGQ_4zSo2BeVwq0XAj0",
@@ -84,22 +84,7 @@ class AddComment extends Component {
                   <option>5</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="elementId">
-                <Form.Label>Element Id:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Scrivi l'Element Id"
-                  value={this.state.comment.elementId}
-                  onChange={e => {
-                    this.setState({
-                      comment: {
-                        ...this.state.comment,
-                        elementId: e.target.value
-                      }
-                    });
-                  }}
-                />
-              </Form.Group>
+
               <Button className="mb-3" variant="primary" type="submit">
                 Submit
               </Button>
