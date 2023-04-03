@@ -6,7 +6,7 @@ class AddComment extends Component {
     comment: {
       comment: "",
       rate: "1",
-      elementId: this.props.elementId
+      elementId: this.props.asin
     }
   };
 
@@ -14,13 +14,13 @@ class AddComment extends Component {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${this.props.asin}`, {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
         method: "POST",
         body: JSON.stringify(this.state.comment),
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzOWZmOWM1NmIzNjAwMTMzZmU1NWEiLCJpYXQiOjE2ODA1MDIyMDEsImV4cCI6MTY4MTcxMTgwMX0.fig-8rFCTFRY2yqHXAH6TirDOGQ_4zSo2BeVwq0XAj0",
-          "Content-Type": "application/json"
+          "Content-type": "application/json"
         }
       });
 
@@ -29,7 +29,7 @@ class AddComment extends Component {
           comment: {
             comment: "",
             rate: "1",
-            elementId: ""
+            elementId: this.props.asin
           }
         });
       } else {
