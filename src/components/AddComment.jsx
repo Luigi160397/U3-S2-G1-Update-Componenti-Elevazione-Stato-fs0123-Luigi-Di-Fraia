@@ -85,7 +85,7 @@ class AddComment extends Component {
                 </Form.Select>
               </Form.Group>
 
-              <Button className="mb-3" variant="primary" type="submit">
+              <Button className="mb-3" variant="warning" type="submit">
                 Submit
               </Button>
             </Form>
