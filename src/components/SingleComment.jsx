@@ -1,15 +1,17 @@
 import { Component } from "react";
-import { Badge, ListGroupItem } from "react-bootstrap";
+import { Badge, Col, ListGroupItem, Row } from "react-bootstrap";
 
 class SingleComment extends Component {
   render() {
     return (
-      <ListGroupItem className="d-flex justify-content-between align-items-center">
-        <span>Autore: {this.props.author}</span>
-        <span>{this.props.comment}</span>
-        <span>
-          Rate: <Badge bg="dark">{this.props.rate}</Badge>
-        </span>
+      <ListGroupItem>
+        <Row className="d-flex justify-content-between align-items-center">
+          <Col xs={4}>Autore: {this.props.author}</Col>
+          <Col xs={6}>{this.props.comment}</Col>
+          <Col xs={2}>
+            Rate: <Badge bg="dark">{this.props.rate}</Badge>
+          </Col>
+        </Row>
       </ListGroupItem>
     );
   }
