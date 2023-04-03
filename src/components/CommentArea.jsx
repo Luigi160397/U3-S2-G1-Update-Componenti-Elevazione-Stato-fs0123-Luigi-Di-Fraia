@@ -1,6 +1,7 @@
 import { Component } from "react";
 import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
+import { Alert } from "react-bootstrap";
 
 class CommentArea extends Component {
   state = {
@@ -32,7 +33,11 @@ class CommentArea extends Component {
     return (
       <>
         <AddComment asin={this.props.asin} />
-        <CommentsList comments={this.state.comments} />
+        {this.state.comments.length > 0 ? (
+          <CommentsList comments={this.state.comments} />
+        ) : (
+          <Alert variant="warning">Nessun commento trovato</Alert>
+        )}
       </>
     );
   }
