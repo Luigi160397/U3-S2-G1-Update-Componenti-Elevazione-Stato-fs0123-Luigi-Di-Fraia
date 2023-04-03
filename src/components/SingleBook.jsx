@@ -20,8 +20,8 @@ class SingleBook extends Component {
       border: this.state.selected ? "2px solid red" : "none"
     };
     return (
-      <Card onClick={this.toggleBook} className="shadow libri" style={selectedStyle}>
-        <Card.Img variant="top" className="img-fluid" id="image-card" src={this.props.img} />
+      <Card className="shadow libri" style={selectedStyle}>
+        <Card.Img onClick={this.toggleBook} variant="top" className="img-fluid" id="image-card" src={this.props.img} />
         <Card.Body>
           <Card.Title className="text-truncate">{this.props.title}</Card.Title>
           <Card.Text>Prezzo: {this.props.price} €</Card.Text>
