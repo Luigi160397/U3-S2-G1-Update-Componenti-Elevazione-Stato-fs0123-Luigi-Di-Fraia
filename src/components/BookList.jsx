@@ -34,7 +34,7 @@ class BookList extends Component {
             <>
               {this.props.books.map(book => (
                 <Col key={book.asin} className="pb-3 px-2">
-                  <SingleBook img={book.img} title={book.title} price={book.price} />
+                  <SingleBook asin={book.asin} img={book.img} title={book.title} price={book.price} />
                 </Col>
               ))}
             </>
@@ -44,7 +44,7 @@ class BookList extends Component {
                 .filter(book => book.title.toLowerCase().includes(this.state.stringa.toLowerCase()))
                 .map(book => (
                   <Col key={book.asin} className="pb-3 px-2">
-                    <SingleBook img={book.img} title={book.title} price={book.price} />
+                    <SingleBook asin={book.asin} img={book.img} title={book.title} price={book.price} />
                   </Col>
                 ))}
             </>
