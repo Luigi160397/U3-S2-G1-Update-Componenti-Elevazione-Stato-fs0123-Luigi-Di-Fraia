@@ -7,7 +7,13 @@ class CommentsList extends Component {
     return (
       <ListGroup>
         {this.props.comments.map(comment => (
-          <SingleComment key={comment._id} author={comment.author} comment={comment.comment} rate={comment.rate} />
+          <SingleComment
+            _id={comment._id}
+            key={comment._id}
+            author={comment.author}
+            comment={comment.comment}
+            rate={comment.rate}
+          />
         ))}
       </ListGroup>
     );
