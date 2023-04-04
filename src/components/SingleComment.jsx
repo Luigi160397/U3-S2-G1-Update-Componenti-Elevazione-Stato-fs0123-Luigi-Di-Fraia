@@ -25,16 +25,18 @@ class SingleComment extends Component {
 
   render() {
     return (
-      <ListGroupItem className="ps-2 pe-4">
-        <Row className="d-flex justify-content-between align-items-center">
-          <Col className="text-truncate" xs={3}>
-            {this.props.author}
+      <ListGroupItem>
+        <Row className="d-flex justify-content-between align-items-center gy-2">
+          <Col className="text-truncate" xs={12}>
+            <strong>Autore:</strong> {this.props.author}
           </Col>
-          <Col xs={3}>{this.props.comment}</Col>
-          <Col xs={3}>
-            Rate: <Badge bg="dark">{this.props.rate}</Badge>
+          <Col xs={12}>
+            <strong>Commento:</strong> {this.props.comment}
           </Col>
-          <Col xs={3}>
+          <Col xs={12}>
+            <strong>Rate:</strong> <Badge bg="dark">{this.props.rate}</Badge>
+          </Col>
+          <Col xs={12}>
             <Button variant="danger" className="fs-6" onClick={this.deleteComment}>
               <small>Elimina</small>
             </Button>
