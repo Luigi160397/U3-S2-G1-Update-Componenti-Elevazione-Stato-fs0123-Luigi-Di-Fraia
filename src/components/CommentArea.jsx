@@ -32,9 +32,9 @@ class CommentArea extends Component {
   render() {
     return (
       <>
-        <AddComment asin={this.props.asin} />
+        <AddComment asin={this.props.asin} request={this.request} />
         {this.state.comments.length > 0 ? (
-          <CommentsList comments={this.state.comments} />
+          <CommentsList request={this.request} comments={this.state.comments} />
         ) : (
           <Alert variant="warning">Nessun commento trovato</Alert>
         )}

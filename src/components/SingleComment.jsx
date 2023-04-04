@@ -14,6 +14,7 @@ class SingleComment extends Component {
         }
       });
       if (response.ok) {
+        this.props.request();
         alert("Commento eliminato con successo.");
       } else {
         throw new Error("Error deleting comment");

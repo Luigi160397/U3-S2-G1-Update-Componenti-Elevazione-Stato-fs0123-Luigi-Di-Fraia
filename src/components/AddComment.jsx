@@ -25,6 +25,8 @@ class AddComment extends Component {
       });
 
       if (response.ok) {
+        alert("Commento inviato con successo.");
+        this.props.request();
         this.setState({
           comment: {
             comment: "",

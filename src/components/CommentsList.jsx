@@ -13,6 +13,7 @@ class CommentsList extends Component {
             author={comment.author}
             comment={comment.comment}
             rate={comment.rate}
+            request={this.props.request}
           />
         ))}
       </ListGroup>
